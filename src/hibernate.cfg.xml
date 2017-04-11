@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM 
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd"> 
+  
+<hibernate-configuration>  
+   <session-factory>  
+       <!-- Assume TestDb is the database name -->
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>  
+        <property name="connection.url">jdbc:mysql://localhost:3306/TestDb</property>  
+        <property name="connection.username">root</property>  
+        <property name="connection.password">1234</property>  
+          
+   <!-- dialect is specifying which language is need to communicate with db -->
+   <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+       <!-- drop or auto create the table, it always drop the table and create the new one -->
+      <property name="hbm2ddl.auto">create</property>  
+    <!-- List of XML mapping files i.e. Names of annoated entity class -->
+    
+      <mapping class="org.priya.hibernate.dto.UserDetailsDTO"/>
+      <mapping class="org.priya.hibernate.dto.NewUserDetailsDTO"/>
+      <mapping class="org.priya.hibernate.dto.UserDetailsCollectionDTO"/>
+      <mapping class="org.priya.hibernate.dto.UserOneToOneDTO"/>
+      <mapping class="org.priya.hibernate.dto.VehicleOneToOneDTO"/>
+      <mapping class="org.priya.hibernate.dto.UserOneToManyDTO"/>
+      <mapping class="org.priya.hibernate.dto.VehicleOneToManyDTO"/>
+       <mapping class="org.priya.hibernate.dto.UserManyToManyDTO"/>
+      <mapping class="org.priya.hibernate.dto.VehicleManyToManyDTO"/>
+      
+   
+    
+    </session-factory>  
+  </hibernate-configuration>  
